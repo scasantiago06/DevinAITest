@@ -64,14 +64,14 @@ export default function App() {
       <header className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-semibold tracking-tight">Gastos</h1>
-          <p className="text-sm text-neutral-500">
+          <p className="text-sm text-neutral-400">
             Tus datos se guardan solo en este navegador.
           </p>
         </div>
         <button
           onClick={exportCsv}
           disabled={expenses.length === 0}
-          className="rounded-lg border border-neutral-200 px-3 py-2 text-sm transition hover:border-neutral-900 disabled:opacity-40"
+          className="rounded-lg border border-neutral-800 px-3 py-2 text-sm transition hover:border-neutral-500 disabled:opacity-40"
         >
           Exportar CSV
         </button>
@@ -80,15 +80,15 @@ export default function App() {
       <ExpenseForm onAdd={(expense) => setExpenses((current) => [expense, ...current])} />
 
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="inline-flex rounded-lg border border-neutral-200 bg-white p-1">
+        <div className="inline-flex rounded-lg border border-neutral-800 bg-neutral-900 p-1">
           {PERIODS.map((option) => (
             <button
               key={option.value}
               onClick={() => setPeriod(option.value)}
               className={`rounded-md px-3 py-1.5 text-sm transition ${
                 period === option.value
-                  ? 'bg-neutral-900 text-white'
-                  : 'text-neutral-600 hover:text-neutral-900'
+                  ? 'bg-neutral-100 text-neutral-900'
+                  : 'text-neutral-400 hover:text-neutral-100'
               }`}
             >
               {option.label}
@@ -99,7 +99,7 @@ export default function App() {
           <button
             onClick={() => shift(-1)}
             aria-label="Periodo anterior"
-            className="rounded-lg border border-neutral-200 px-2 py-1 text-sm hover:border-neutral-900"
+            className="rounded-lg border border-neutral-800 px-2 py-1 text-sm hover:border-neutral-500"
           >
             ‹
           </button>
@@ -109,7 +109,7 @@ export default function App() {
           <button
             onClick={() => shift(1)}
             aria-label="Periodo siguiente"
-            className="rounded-lg border border-neutral-200 px-2 py-1 text-sm hover:border-neutral-900"
+            className="rounded-lg border border-neutral-800 px-2 py-1 text-sm hover:border-neutral-500"
           >
             ›
           </button>

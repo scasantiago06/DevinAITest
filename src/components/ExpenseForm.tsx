@@ -31,10 +31,10 @@ export function ExpenseForm({ onAdd }: Props) {
   return (
     <form
       onSubmit={submit}
-      className="grid gap-3 rounded-xl border border-neutral-200 bg-white p-4 sm:grid-cols-[1fr_1fr_2fr_1fr_auto]"
+      className="grid gap-3 rounded-xl border border-neutral-800 bg-neutral-900 p-4 sm:grid-cols-[1fr_1fr_2fr_1fr_auto]"
     >
       <input
-        className="rounded-lg border border-neutral-200 px-3 py-2 text-sm outline-none focus:border-neutral-900"
+        className="rounded-lg border border-neutral-800 bg-neutral-950 px-3 py-2 text-sm text-neutral-100 placeholder-neutral-500 outline-none focus:border-neutral-500"
         inputMode="decimal"
         placeholder="Monto"
         value={amount}
@@ -42,7 +42,7 @@ export function ExpenseForm({ onAdd }: Props) {
         required
       />
       <select
-        className="rounded-lg border border-neutral-200 px-3 py-2 text-sm outline-none focus:border-neutral-900"
+        className="rounded-lg border border-neutral-800 bg-neutral-950 px-3 py-2 text-sm text-neutral-100 placeholder-neutral-500 outline-none focus:border-neutral-500"
         value={category}
         onChange={(event) => setCategory(event.target.value as Category)}
       >
@@ -53,20 +53,20 @@ export function ExpenseForm({ onAdd }: Props) {
         ))}
       </select>
       <input
-        className="rounded-lg border border-neutral-200 px-3 py-2 text-sm outline-none focus:border-neutral-900"
+        className="rounded-lg border border-neutral-800 bg-neutral-950 px-3 py-2 text-sm text-neutral-100 placeholder-neutral-500 outline-none focus:border-neutral-500"
         placeholder="Descripción (opcional)"
         value={description}
         onChange={(event) => setDescription(event.target.value)}
       />
       <input
-        className="rounded-lg border border-neutral-200 px-3 py-2 text-sm outline-none focus:border-neutral-900"
+        className="rounded-lg border border-neutral-800 bg-neutral-950 px-3 py-2 text-sm text-neutral-100 placeholder-neutral-500 outline-none focus:border-neutral-500"
         type="date"
         value={date}
         onChange={(event) => setDate(event.target.value)}
       />
       <button
         type="submit"
-        className="rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-neutral-700"
+        className="rounded-lg bg-neutral-100 px-4 py-2 text-sm font-medium text-neutral-900 transition hover:bg-white"
       >
         Agregar
       </button>

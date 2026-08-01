@@ -11,14 +11,14 @@ interface Props {
 export function ExpenseList({ expenses, onRemove }: Props) {
   if (expenses.length === 0) {
     return (
-      <p className="rounded-xl border border-dashed border-neutral-200 p-8 text-center text-sm text-neutral-500">
+      <p className="rounded-xl border border-dashed border-neutral-800 p-8 text-center text-sm text-neutral-400">
         Sin gastos en este periodo.
       </p>
     )
   }
 
   return (
-    <ul className="divide-y divide-neutral-100 rounded-xl border border-neutral-200 bg-white">
+    <ul className="divide-y divide-neutral-800 rounded-xl border border-neutral-800 bg-neutral-900">
       {[...expenses]
         .sort((a, b) => b.date.localeCompare(a.date))
         .map((expense) => (
@@ -27,7 +27,7 @@ export function ExpenseList({ expenses, onRemove }: Props) {
               <p className="truncate text-sm font-medium">
                 {expense.description || expense.category}
               </p>
-              <p className="text-xs text-neutral-500">
+              <p className="text-xs text-neutral-400">
                 {expense.category} · {format(new Date(expense.date), "d MMM yyyy", { locale: es })}
               </p>
             </div>
@@ -37,7 +37,7 @@ export function ExpenseList({ expenses, onRemove }: Props) {
             <button
               onClick={() => onRemove(expense.id)}
               aria-label="Eliminar gasto"
-              className="text-neutral-400 transition hover:text-red-600"
+              className="text-neutral-500 transition hover:text-red-400"
             >
               ×
             </button>
